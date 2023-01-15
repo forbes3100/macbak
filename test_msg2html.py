@@ -352,13 +352,6 @@ class TestMsgToHtml(unittest.TestCase):
         fn2_1 = fn2se[0] + "_1" + fn2se[1]
         self.assertTrue(path.exists(fn2_1), fn2_1)
 
-    # def test_6_command_line(self):
-    #     # this runs, but still doesn't include coverage of __main__
-    #     # which appears to require tricks-- too much trouble
-    #     result = subprocess.run(['./msg2html.py', '2021', '-d', '3', '-f'],
-    #                             stdout=subprocess.PIPE)
-    #     self.assertEqual(result.returncode, 0)
-
 
 if __name__ == "__main__":
     unittest.main()

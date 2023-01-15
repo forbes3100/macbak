@@ -1,0 +1,4 @@
+[run]
+omit =
+	/Users/scott/Library/*
+	/opt/homebrew/lib/*

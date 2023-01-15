@@ -1,0 +1,15 @@
+.DS_Store
+__pycache__
+Attachments
+Old
+copies
+links_*
+*.html
+*.dump
+*.db
+*.db-shm
+*.db-wal
+*test.py
+*debug.py
+.coverage
+HEART.jpeg

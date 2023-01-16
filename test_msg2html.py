@@ -29,29 +29,17 @@ att_dir = "TestAttachments/"
 lib_dir = "~/Library/Messages/"
 ext = "TestExtern/Messages/Attachments/"
 
+# fmt: off
 test_messages = [
     # guid, text,       handle_id, service, date,    from_me, cache_has_att
-    (
-        "100",
-        "Test message 1a.\ufffcAfter.",
-        1,
-        "SMS",
-        652552877020974848,
-        0,
-        1,
-    ),
+    ("100", "Test message 1a.\ufffcAfter.",
+                        1, "SMS", 652552877020974848, 0, 1),
     ("101", "Test message 2.", 5, "iMessage", 652552877020975848, 1, 0),
     ("102", "Test message 3.\ufffc", 2, "iMessage", 652552877020976848, 0, 1),
-    (
-        "103",
-        "Test message 4.\ufffcAnd bubbles\ufffc",
-        5,
-        "iMessage",
-        652552876403117312,
-        0,
-        1,
-    ),
+    ("103", "Test message 4.\ufffcAnd bubbles\ufffc",
+                        5, "iMessage", 652552876403117312, 0, 1),
 ]
+# fmt: on
 
 test_handles = [
     # rowid, id

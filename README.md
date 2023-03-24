@@ -13,9 +13,9 @@ to be copied to the Mac. Together these allow normal Mac backup of these files.
 
 Tools:
 
-- msg2html -- Convert Mac Messages database into HTML
-- notes2html -- Back up Apple Notes to HTML or PDF files
-- icdrivebak -- Force all iCloud Drive files to be downloaded, for backup
+- msg2html — Convert Mac Messages database into HTML
+- notes2html — Back up Apple Notes to HTML or PDF files
+- icdrivebak — Force all iCloud Drive files to be downloaded, for backup
 
 
 ## Getting Started
@@ -43,7 +43,7 @@ The following command should run all tests, ending with "OK".
 
 ## Usage
 
-# msg2html
+### msg2html
 
 Copy your chat.db file and Attachments folder from your library into the macbak working directory:
 
@@ -94,7 +94,7 @@ For ease in extracting image files, the "-f" switch tells it to generate a "link
 ./msg2html.py 2022 -f
 ```
 
-# notes2html
+### notes2html
 
 Double-click notes2html.applescript which should open in the Script Editor. Either run it there by clicking the start button, or save it as a stand-alone application.
 
@@ -105,8 +105,16 @@ When run again only updated notes will be written.
 To change it to write PDF files, open the file in the Script Editor and change the "set writePdf to" line to "true". Note that PDF exporting from Notes requires adding the Script Editor to the list of applications in System Preferences>Privacy & Security>Accessibility, which can be a security risk.
 
 
-# icdrivebak
+### icdrivebak
 
+The following command should start the iCloud download of any files that have
+yet to be downloaded to this Mac, listing those files. The files are stored
+locally in ~/Library/Mobile Documents, allowing Time Machine, etc. to back
+them up.
+
+```
+./icdrivebak.py
+```
 
 
 ## Contributing

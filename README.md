@@ -14,7 +14,7 @@ to be copied to the Mac. Together these allow normal Mac backup of these files.
 Tools:
 
 - msg2html — Convert Mac Messages database into HTML
-- notes2html — Back up Apple Notes to HTML or PDF files
+- notes2html — Back up Apple Notes to HTML files
 - icdrivebak — Force all iCloud Drive files to be downloaded, for backup
 
 
@@ -96,13 +96,11 @@ For ease in extracting image files, the "-f" switch tells it to generate a "link
 
 ### notes2html
 
-Double-click notes2html.applescript which should open in the Script Editor. Either run it there by clicking the start button, or save it as a stand-alone application.
+Notes backup is done whenever macbak is scheduled to run.
 
-When run it will create the folder notes_icloud_bak in Documents if it doesn't exist, and write each note to a .html file there in subfolders matching the folder hierarchy in Notes. The file names have spaces changed to underscores to ease use with Unix.
+It will create the folder notes_icloud_bak in Documents if it doesn't exist, and write each note to a .html file there in subfolders matching the folder hierarchy in Notes. The file names have spaces changed to underscores to ease use with Unix.
 
 When run again only updated notes will be written.
-
-To change it to write PDF files, open the file in the Script Editor and change the "set writePdf to" line to "true". Note that PDF exporting from Notes requires adding the Script Editor to the list of applications in System Preferences>Privacy & Security>Accessibility, which can be a security risk.
 
 
 ### icdrivebak

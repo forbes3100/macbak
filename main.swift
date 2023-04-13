@@ -13,8 +13,30 @@
 // GNU General Public License for more details.
 
 import Foundation
+import IOKit.ps
+
+func isSystemAsleep() -> Bool {
+    let snapshot = IOPSCopyPowerSourcesInfo().takeRetainedValue()
+    let sources = IOPSCopyPowerSourcesList(snapshot).takeRetainedValue() as NSArray
+
+    for ps in sources {
+        let description = IOPSGetPowerSourceDescription(snapshot, ps as CFTypeRef).takeUnretainedValue() as NSDictionary
+
+        if let state = description[kIOPSPowerSourceStateKey] as? String {
+            if state == kIOPSACPowerValue as String {
+                return false
+            }
+        }
+    }
+
+    return true
+}
 
 func macbak() {
+    if isSystemAsleep() {
+        exit(0)
+    }
+
     let desktopURL = FileManager.default.homeDirectoryForCurrentUser
         .appendingPathComponent("Desktop")
     let logFilePath = desktopURL.appendingPathComponent("macbak.log")

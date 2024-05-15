@@ -127,8 +127,9 @@ html_tail = """
 </html>
 """
 
-# Cascading Style Sheet classes, based on context
 class CSS:
+    """Cascading Style Sheet classes, based on context."""
+
     def __init__(self, is_from_me, svc):
         if is_from_me:
             self.con_class = ' class="cm"'
@@ -164,8 +165,9 @@ class Message:
 lib_path = "~/Library/Messages/"
 lib_path_len = len(lib_path)
 
-# Create a (unique) symlink to image_file in the links dir.
 def add_link_to(image_file_h, mime_t):
+    """Create a (unique) symlink to image_file in the links dir."""
+
     if mime_t[:5] == "image":
         image_file = image_file_h.replace("%23", "#")
         image_path = path.realpath(image_file)
@@ -184,6 +186,8 @@ def add_link_to(image_file_h, mime_t):
 
 
 def output_text(text):
+    """Write text to output as HTML, converting emoji."""
+
     if debug > 0:
         utext = text.encode("unicode_escape")
         out.write(f"<p{css.info_class}>text({len(text)}) = {utext}</p>\n")
@@ -200,6 +204,13 @@ def output_text(text):
 
 
 def output_attachment(seq, msg, con, cursor):
+    """Convert a message attachment to HTML and write to out file.
+
+    seq: sequence number
+    msg: Message
+    con: open sqlite3 connection
+    cursor: sqlite3 cursor
+    """
     if not msg.has_attach:
         out.write(f"<p{css.info_class}>No attachment!</p>\n")
         return
@@ -302,19 +313,20 @@ def output_attachment(seq, msg, con, cursor):
         # Mac Safari (at least) seems to want images & movies
         # in an img tag.
         out.write(f'<img{css.img_class} src="{a_path}" width="{a_width}">\n')
-        # out.write(f'<div{css.con_class}>'
-        #           f'<img{css.img_class} src="{a_path}"'
-        #           f' width="{a_width}">\n'
-        #           '</div>\n')
-        # out.write(f'<div{css.con_class}><div{css.flex_class}>\n'
-        #           f'<img{css.text_class} src="{a_path}"'
-        #           f' width="{a_width}">\n'
-        #           '</div></div>\n')
         if links and not msg.is_from_me:
             add_link_to(a_path, mime_t)
 
 
 def convert(db, _att_dir, year, _ext_att_dir, out_name):
+    """Convert one year of messages in database db to an HTML file.
+
+    db: database file path
+    _att_dir: Attachments dir
+    year: desired year [int]
+    _ext_att_dir: optional external Attributes dir for additional attachments
+    out_name: output file base name
+    """
+    
     global att_dir, ext_att_dir, ext_att_files, css, out
     att_dir = _att_dir
     ext_att_dir = _ext_att_dir
@@ -331,7 +343,7 @@ def convert(db, _att_dir, year, _ext_att_dir, out_name):
     if debug == 10:
         out.write(repr(id_named_handles))
 
-    # if external attributes directory path given, make a list of files there
+    # if external Attributes directory path given, make a list of files there
     ext_att_files = {}
     if ext_att_dir and path.exists(ext_att_dir):
         for root, dirs, files in os.walk(ext_att_dir):

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D202243E29E4B0E2001AB9C2 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D202243D29E4B0E2001AB9C2 /* main.swift */; };
 		D202244029E4B210001AB9C2 /* notes2html.swift in Sources */ = {isa = PBXBuildFile; fileRef = D202243F29E4B210001AB9C2 /* notes2html.swift */; };
+		D27C7B9029E87EA600BA492C /* msg2html.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27C7B8F29E87EA500BA492C /* msg2html.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,6 +28,7 @@
 		D202242029E45191001AB9C2 /* macbak */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = macbak; sourceTree = BUILT_PRODUCTS_DIR; };
 		D202243D29E4B0E2001AB9C2 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = SOURCE_ROOT; };
 		D202243F29E4B210001AB9C2 /* notes2html.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notes2html.swift; sourceTree = SOURCE_ROOT; };
+		D27C7B8F29E87EA500BA492C /* msg2html.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = msg2html.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			children = (
 				D202243D29E4B0E2001AB9C2 /* main.swift */,
 				D202243F29E4B210001AB9C2 /* notes2html.swift */,
+				D27C7B8F29E87EA500BA492C /* msg2html.swift */,
 			);
 			path = macbak;
 			sourceTree = "<group>";
@@ -93,7 +96,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1410;
-				LastUpgradeCheck = 1410;
+				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					D202241F29E45191001AB9C2 = {
 						CreatedOnToolsVersion = 14.1;
@@ -123,6 +126,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D27C7B9029E87EA600BA492C /* msg2html.swift in Sources */,
 				D202243E29E4B0E2001AB9C2 /* main.swift in Sources */,
 				D202244029E4B210001AB9C2 /* notes2html.swift in Sources */,
 			);
@@ -164,9 +168,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -224,9 +230,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -248,6 +256,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_HARDENED_RUNTIME = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -257,6 +267,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_HARDENED_RUNTIME = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};

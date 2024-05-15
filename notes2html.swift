@@ -93,7 +93,7 @@ fileprivate func backUpNote(notesBakPath: String, folderName: String, curNote: N
         do {
             try b.write(toFile: bakFile, atomically: true, encoding: .utf8)
         } catch {
-            print("Error writing to file: \(error.localizedDescription)")
+            fatalError("Writing to file: \(bakFile)")
         }
     }
     
@@ -123,19 +123,17 @@ func notes2Html() {
                 attributes: nil
             )
         } catch {
-            print("Error creating backup folder: \(error.localizedDescription)")
+            fatalError("Creating backup folder \(notesBakPath)")
         }
     }
 
     guard let notesApp = SBApplication(bundleIdentifier: "com.apple.Notes")
             as NotesApplication? else {
-        print("Unable to access Notes application")
-        return
+        fatalError("Unable to access Notes application")
     }
     
     guard let folders = notesApp.folders else {
-        print("Unable to access Notes folders")
-        return
+        fatalError("Unable to access Notes folders")
     }
     
     var i = 0

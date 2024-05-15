@@ -16,20 +16,7 @@ import Foundation
 import IOKit.ps
 
 func isSystemAsleep() -> Bool {
-    let snapshot = IOPSCopyPowerSourcesInfo().takeRetainedValue()
-    let sources = IOPSCopyPowerSourcesList(snapshot).takeRetainedValue() as NSArray
-
-    for ps in sources {
-        let description = IOPSGetPowerSourceDescription(snapshot, ps as CFTypeRef).takeUnretainedValue() as NSDictionary
-
-        if let state = description[kIOPSPowerSourceStateKey] as? String {
-            if state == kIOPSACPowerValue as String {
-                return false
-            }
-        }
-    }
-
-    return true
+    return ProcessInfo.processInfo.isLowPowerModeEnabled
 }
 
 func macbak() {
@@ -47,6 +34,7 @@ func macbak() {
     )
 
     notes2Html()
+    //msg2html()
 
     let logEntry = "\(currentDateTime)\n"
     if let data = logEntry.data(using: .utf8) {

@@ -33,8 +33,8 @@ func macbak() {
         timeStyle: .medium
     )
 
-    notes2Html()
-    //msg2html()
+    //notes2Html()
+    msg2html()
 
     let logEntry = "\(currentDateTime)\n"
     if let data = logEntry.data(using: .utf8) {

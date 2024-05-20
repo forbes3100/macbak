@@ -56,18 +56,18 @@ fileprivate func backUpNote(notesBakPath: String, folderName: String, curNote: N
 
     var needBak = false
     var needDelete = false
-    
+
     let fileManager = FileManager.default
     let folderExists = fileManager.fileExists(atPath: folderPath)
     let bakFileExists = fileManager.fileExists(atPath: bakFile)
-    
+
     if folderExists {
         if bakFileExists {
             let bakFileDate = try? fileManager.attributesOfItem(atPath: bakFile)[.modificationDate] as? Date
             if let bakFileDate = bakFileDate, bakFileDate < noteModDate {
                 needBak = true
                 needDelete = true
-                
+
                 let oldName = bakFile + ".old"
                 try? fileManager.moveItem(atPath: bakFile, toPath: oldName)
             }
@@ -78,7 +78,7 @@ fileprivate func backUpNote(notesBakPath: String, folderName: String, curNote: N
         try? fileManager.createDirectory(atPath: folderPath, withIntermediateDirectories: true, attributes: nil)
         needBak = true
     }
-    
+
     if needBak {
         let b = curNote.body!.replacingOccurrences(of: "“", with: "&ldquo;")
             .replacingOccurrences(of: "“", with: "&ldquo;")
@@ -96,7 +96,7 @@ fileprivate func backUpNote(notesBakPath: String, folderName: String, curNote: N
             fatalError("Writing to file: \(bakFile)")
         }
     }
-    
+
     if needDelete {
         try? fileManager.removeItem(atPath: bakFile + ".old")
     }
@@ -131,11 +131,11 @@ func notes2Html() {
             as NotesApplication? else {
         fatalError("Unable to access Notes application")
     }
-    
+
     guard let folders = notesApp.folders else {
         fatalError("Unable to access Notes folders")
     }
-    
+
     var i = 0
     for folder in folders {
         if let folderName = folder.name {

@@ -19,14 +19,34 @@ func isSystemAsleep() -> Bool {
     return ProcessInfo.processInfo.isLowPowerModeEnabled
 }
 
+// Get the Application Support directory
+func getApplicationSupportDirectory() -> URL {
+    let fileManager = FileManager.default
+    guard let appSupportDirectory = fileManager.urls(for: .applicationSupportDirectory, in: .userDomainMask).first else {
+        fatalError("Failed to create URL for application support directory")
+    }
+    
+    // Create a subdirectory for macbak if it doesn't exist
+    let appDirectory = appSupportDirectory.appendingPathComponent("macbak")
+    if !fileManager.fileExists(atPath: appDirectory.path) {
+        do {
+            try fileManager.createDirectory(at: appDirectory, withIntermediateDirectories: true, attributes: nil)
+        } catch {
+            fatalError("Failed to create application support directory: \(error)")
+        }
+    }
+    
+    return appDirectory
+}
+
 func macbak() {
     if isSystemAsleep() {
         exit(0)
     }
 
-    let desktopURL = FileManager.default.homeDirectoryForCurrentUser
-        .appendingPathComponent("Desktop")
-    let logFilePath = desktopURL.appendingPathComponent("macbak.log")
+    let appDirectory = getApplicationSupportDirectory()
+    let logFilePath = appDirectory.appendingPathComponent("macbak.log")
+
     let currentDateTime = DateFormatter.localizedString(
         from: Date(),
         dateStyle: .medium,

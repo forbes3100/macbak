@@ -12,6 +12,8 @@
 		D252D22A2BF7C114002B1DFD /* msg_archive.swift in Sources */ = {isa = PBXBuildFile; fileRef = D252D2292BF7C114002B1DFD /* msg_archive.swift */; };
 		D252D23B2BF99F48002B1DFD /* Msg2HtmlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D252D22B2BF99D74002B1DFD /* Msg2HtmlTests.swift */; };
 		D252D2412BF99F87002B1DFD /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D252D2402BF99F87002B1DFD /* XCTest.framework */; };
+		D252D2592BFFB816002B1DFD /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = D252D2582BFFB816002B1DFD /* ArgumentParser */; };
+		D252D25C2C0006C5002B1DFD /* TestArchive in CopyFiles */ = {isa = PBXBuildFile; fileRef = D252D25B2C0006C5002B1DFD /* TestArchive */; };
 		D26009942BF69CE8004FD72C /* msg_db.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26009932BF69CE8004FD72C /* msg_db.swift */; };
 		D27C7B9029E87EA600BA492C /* msg2html.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27C7B8F29E87EA500BA492C /* msg2html.swift */; };
 /* End PBXBuildFile section */
@@ -36,6 +38,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		D252D25A2C000604002B1DFD /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 6;
+			files = (
+				D252D25C2C0006C5002B1DFD /* TestArchive in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +58,8 @@
 		D252D22B2BF99D74002B1DFD /* Msg2HtmlTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Msg2HtmlTests.swift; sourceTree = "<group>"; };
 		D252D2312BF99EFF002B1DFD /* macbak_test.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = macbak_test.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D252D2402BF99F87002B1DFD /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		D252D2552BFFB714002B1DFD /* msg2html_main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = msg2html_main.swift; sourceTree = "<group>"; };
+		D252D25B2C0006C5002B1DFD /* TestArchive */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TestArchive; sourceTree = "<group>"; };
 		D26009932BF69CE8004FD72C /* msg_db.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = msg_db.swift; sourceTree = SOURCE_ROOT; };
 		D27C7B8F29E87EA500BA492C /* msg2html.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = msg2html.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -55,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D252D2592BFFB816002B1DFD /* ArgumentParser in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,10 +89,12 @@
 			children = (
 				D202243D29E4B0E2001AB9C2 /* main.swift */,
 				D202243F29E4B210001AB9C2 /* notes2html.swift */,
+				D252D2552BFFB714002B1DFD /* msg2html_main.swift */,
 				D27C7B8F29E87EA500BA492C /* msg2html.swift */,
 				D26009932BF69CE8004FD72C /* msg_db.swift */,
 				D252D2292BF7C114002B1DFD /* msg_archive.swift */,
 				D252D22B2BF99D74002B1DFD /* Msg2HtmlTests.swift */,
+				D252D25B2C0006C5002B1DFD /* TestArchive */,
 				D202242129E45191001AB9C2 /* Products */,
 				D252D23F2BF99F87002B1DFD /* Frameworks */,
 			);
@@ -110,12 +127,16 @@
 				D202241C29E45191001AB9C2 /* Sources */,
 				D202241D29E45191001AB9C2 /* Frameworks */,
 				D202241E29E45191001AB9C2 /* CopyFiles */,
+				D252D25A2C000604002B1DFD /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = macbak;
+			packageProductDependencies = (
+				D252D2582BFFB816002B1DFD /* ArgumentParser */,
+			);
 			productName = macbak;
 			productReference = D202242029E45191001AB9C2 /* macbak */;
 			productType = "com.apple.product-type.tool";
@@ -165,6 +186,9 @@
 				Base,
 			);
 			mainGroup = D202241729E45191001AB9C2;
+			packageReferences = (
+				D252D2572BFFB776002B1DFD /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
+			);
 			productRefGroup = D202242129E45191001AB9C2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -424,6 +448,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D252D2572BFFB776002B1DFD /* XCRemoteSwiftPackageReference "swift-argument-parser" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-argument-parser.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D252D2582BFFB816002B1DFD /* ArgumentParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D252D2572BFFB776002B1DFD /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
+			productName = ArgumentParser;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D202241829E45191001AB9C2 /* Project object */;
 }

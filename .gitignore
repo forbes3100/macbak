@@ -5,7 +5,9 @@ Old
 copies
 links_*
 *.html
+*.xml
 *.dump
+*.zip
 *.db
 *.db-shm
 *.db-wal

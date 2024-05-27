@@ -14,6 +14,7 @@
 		D252D2412BF99F87002B1DFD /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D252D2402BF99F87002B1DFD /* XCTest.framework */; };
 		D252D2592BFFB816002B1DFD /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = D252D2582BFFB816002B1DFD /* ArgumentParser */; };
 		D252D25C2C0006C5002B1DFD /* TestArchive in CopyFiles */ = {isa = PBXBuildFile; fileRef = D252D25B2C0006C5002B1DFD /* TestArchive */; };
+		D252D25E2C022F67002B1DFD /* TestAttachments in CopyFiles */ = {isa = PBXBuildFile; fileRef = D252D25D2C022F67002B1DFD /* TestAttachments */; };
 		D26009942BF69CE8004FD72C /* msg_db.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26009932BF69CE8004FD72C /* msg_db.swift */; };
 		D27C7B9029E87EA600BA492C /* msg2html.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27C7B8F29E87EA500BA492C /* msg2html.swift */; };
 /* End PBXBuildFile section */
@@ -44,6 +45,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 6;
 			files = (
+				D252D25E2C022F67002B1DFD /* TestAttachments in CopyFiles */,
 				D252D25C2C0006C5002B1DFD /* TestArchive in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -60,6 +62,7 @@
 		D252D2402BF99F87002B1DFD /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		D252D2552BFFB714002B1DFD /* msg2html_main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = msg2html_main.swift; sourceTree = "<group>"; };
 		D252D25B2C0006C5002B1DFD /* TestArchive */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TestArchive; sourceTree = "<group>"; };
+		D252D25D2C022F67002B1DFD /* TestAttachments */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TestAttachments; sourceTree = "<group>"; };
 		D26009932BF69CE8004FD72C /* msg_db.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = msg_db.swift; sourceTree = SOURCE_ROOT; };
 		D27C7B8F29E87EA500BA492C /* msg2html.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = msg2html.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -87,6 +90,7 @@
 		D202241729E45191001AB9C2 = {
 			isa = PBXGroup;
 			children = (
+				D252D25D2C022F67002B1DFD /* TestAttachments */,
 				D202243D29E4B0E2001AB9C2 /* main.swift */,
 				D202243F29E4B210001AB9C2 /* notes2html.swift */,
 				D252D2552BFFB714002B1DFD /* msg2html_main.swift */,

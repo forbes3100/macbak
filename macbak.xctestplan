@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "CDA55124-2E82-4E53-AF56-F14C1301AAFE",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:macbak.xcodeproj",
+        "identifier" : "D252D2302BF99EFF002B1DFD",
+        "name" : "macbak_test"
+      }
+    }
+  ],
+  "version" : 1
+}

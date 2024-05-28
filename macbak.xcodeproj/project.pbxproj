@@ -15,30 +15,13 @@
 		D252D2592BFFB816002B1DFD /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = D252D2582BFFB816002B1DFD /* ArgumentParser */; };
 		D252D25C2C0006C5002B1DFD /* TestArchive in CopyFiles */ = {isa = PBXBuildFile; fileRef = D252D25B2C0006C5002B1DFD /* TestArchive */; };
 		D252D25E2C022F67002B1DFD /* TestAttachments in CopyFiles */ = {isa = PBXBuildFile; fileRef = D252D25D2C022F67002B1DFD /* TestAttachments */; };
+		D252D25F2C052F4B002B1DFD /* msg2html.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27C7B8F29E87EA500BA492C /* msg2html.swift */; };
+		D252D2602C052F56002B1DFD /* msg_archive.swift in Sources */ = {isa = PBXBuildFile; fileRef = D252D2292BF7C114002B1DFD /* msg_archive.swift */; };
 		D26009942BF69CE8004FD72C /* msg_db.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26009932BF69CE8004FD72C /* msg_db.swift */; };
 		D27C7B9029E87EA600BA492C /* msg2html.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27C7B8F29E87EA500BA492C /* msg2html.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		D252D23D2BF99F72002B1DFD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D202241829E45191001AB9C2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D202241F29E45191001AB9C2;
-			remoteInfo = macbak;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
-		D202241E29E45191001AB9C2 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
 		D252D25A2C000604002B1DFD /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -63,6 +46,7 @@
 		D252D2552BFFB714002B1DFD /* msg2html_main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = msg2html_main.swift; sourceTree = "<group>"; };
 		D252D25B2C0006C5002B1DFD /* TestArchive */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TestArchive; sourceTree = "<group>"; };
 		D252D25D2C022F67002B1DFD /* TestAttachments */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TestAttachments; sourceTree = "<group>"; };
+		D252D2672C0623C5002B1DFD /* macbak.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = macbak.xctestplan; sourceTree = "<group>"; };
 		D26009932BF69CE8004FD72C /* msg_db.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = msg_db.swift; sourceTree = SOURCE_ROOT; };
 		D27C7B8F29E87EA500BA492C /* msg2html.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = msg2html.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -90,6 +74,7 @@
 		D202241729E45191001AB9C2 = {
 			isa = PBXGroup;
 			children = (
+				D252D2672C0623C5002B1DFD /* macbak.xctestplan */,
 				D252D25D2C022F67002B1DFD /* TestAttachments */,
 				D202243D29E4B0E2001AB9C2 /* main.swift */,
 				D202243F29E4B210001AB9C2 /* notes2html.swift */,
@@ -130,7 +115,6 @@
 			buildPhases = (
 				D202241C29E45191001AB9C2 /* Sources */,
 				D202241D29E45191001AB9C2 /* Frameworks */,
-				D202241E29E45191001AB9C2 /* CopyFiles */,
 				D252D25A2C000604002B1DFD /* CopyFiles */,
 			);
 			buildRules = (
@@ -151,12 +135,10 @@
 			buildPhases = (
 				D252D22D2BF99EFF002B1DFD /* Sources */,
 				D252D22E2BF99EFF002B1DFD /* Frameworks */,
-				D252D22F2BF99EFF002B1DFD /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D252D23E2BF99F72002B1DFD /* PBXTargetDependency */,
 			);
 			name = macbak_test;
 			productName = MacBak;
@@ -203,16 +185,6 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXResourcesBuildPhase section */
-		D252D22F2BF99EFF002B1DFD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		D202241C29E45191001AB9C2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -230,19 +202,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D252D2602C052F56002B1DFD /* msg_archive.swift in Sources */,
 				D252D23B2BF99F48002B1DFD /* Msg2HtmlTests.swift in Sources */,
+				D252D25F2C052F4B002B1DFD /* msg2html.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		D252D23E2BF99F72002B1DFD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D202241F29E45191001AB9C2 /* macbak */;
-			targetProxy = D252D23D2BF99F72002B1DFD /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		D202242529E45191001AB9C2 /* Debug */ = {
@@ -388,14 +354,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = test.MacBak;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
@@ -407,14 +373,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = test.MacBak;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;

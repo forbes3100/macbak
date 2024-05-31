@@ -16,7 +16,9 @@ import Foundation
 import IOKit.ps
 
 func isSystemAsleep() -> Bool {
-    return ProcessInfo.processInfo.isLowPowerModeEnabled
+    // (requires macOS 11+)
+    //return ProcessInfo.processInfo.isLowPowerModeEnabled
+    return false
 }
 
 // Get the Application Support directory
@@ -54,7 +56,7 @@ func macbak() {
     )
 
     //notes2Html()
-    msg2html()
+    msg2html(htmlDir: appDirectory.path)
 
     let logEntry = "\(currentDateTime)\n"
     if let data = logEntry.data(using: .utf8) {

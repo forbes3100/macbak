@@ -56,7 +56,7 @@ func macbak() {
     )
 
     //notes2Html()
-    msg2html(htmlDir: appDirectory.path)
+    msg2html(msgsDir: appDirectory.path)
 
     let logEntry = "\(currentDateTime)\n"
     if let data = logEntry.data(using: .utf8) {

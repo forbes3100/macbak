@@ -32,14 +32,6 @@ Then install dependencies:
 pip3 install coverage pyemoji pillow_heif ui
 ```
 
-## Running the tests
-
-The following command should run all tests, ending with "OK".
-
-```
-./test_msg2html.py
-```
-
 ## Usage
 
 ### notes2html

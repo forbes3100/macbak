@@ -46,6 +46,12 @@ fileprivate func backUpNote(notesBakPath: String, folderName: String, curNote: N
     let sanitizedNoteName = noteNameComponents.joined(separator: "_")
         .replacingOccurrences(of: "/", with: "_")
         .replacingOccurrences(of: ":", with: "_")
+        .replacingOccurrences(of: "?", with: "")
+        .replacingOccurrences(of: "'", with: "")
+        .replacingOccurrences(of: ",", with: "")
+        .replacingOccurrences(of: ".", with: "-")
+        .replacingOccurrences(of: "(", with: "")
+        .replacingOccurrences(of: ")", with: "")
 
     let noteName2 = sanitizedNoteName.hasSuffix("_notes") ? sanitizedNoteName : sanitizedNoteName + "_notes"
     let fileExtension = writePdf ? ".pdf" : ".html"

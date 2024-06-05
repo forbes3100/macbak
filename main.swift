@@ -56,6 +56,7 @@ func macbak() {
     )
 
     notes2Html()
+    icdrivebak()
 
     let logEntry = "\(currentDateTime)\n"
     if let data = logEntry.data(using: .utf8) {

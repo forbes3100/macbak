@@ -36,18 +36,26 @@ let ignoredFiles: Set<String> = [".DS_Store", ".Trash"]
 
 // Function to force download of a file
 func forceDownload(filePath: String, fileName: String) {
-    let url = URL(fileURLWithPath: filePath).absoluteString
-        .addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!
-    let nsUrl = NSURL(string: url)!
+    let nsUrl = NSURL(fileURLWithPath: filePath)
     let fileManager = FileManager.default
     do {
         try fileManager.startDownloadingUbiquitousItem(at: nsUrl as URL)
         print("  \(fileName)")
         downloadCount += 1
     } catch {
-        print("  *** FAILED to download \(fileName)")
+        print("  *** FAILED to download \(fileName): \(error.localizedDescription)")
         failCount += 1
     }
+}
+
+// Check if a file is downloaded
+func isFileDownloaded(filePath: String) -> Bool {
+    let fileURL = URL(fileURLWithPath: filePath)
+    let resourceValues = try? fileURL.resourceValues(forKeys: [.ubiquitousItemDownloadingStatusKey])
+    if let status = resourceValues?.ubiquitousItemDownloadingStatus {
+        return status == .current
+    }
+    return false
 }
 
 // Recursively force download of directory contents
@@ -61,16 +69,12 @@ func forceDownloadDir(cloudDir: String, header: String? = nil, includeDirs: Bool
             fileManager.fileExists(atPath: path, isDirectory: &isDir)
             if isDir.boolValue {
                 forceDownloadDir(cloudDir: path + "/", header: header, includeDirs: includeDirs)
-            } else {
-                let name = (file as NSString).deletingPathExtension
-                let ext = (file as NSString).pathExtension
-                if name.first == ".", ext == "icloud" {
-                    if let header = header, !haveShownHeader {
-                        print(header)
-                        haveShownHeader = true
-                    }
-                    forceDownload(filePath: path, fileName: String(name.dropFirst()))
+            } else if !isFileDownloaded(filePath: path) {
+                if let header = header, !haveShownHeader {
+                    print(header)
+                    haveShownHeader = true
                 }
+                forceDownload(filePath: path, fileName: file)
             }
         }
     }

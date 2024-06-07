@@ -13,6 +13,7 @@
 // GNU General Public License for more details.
 
 import Foundation
+import UniformTypeIdentifiers
 
 // Define constants for paths
 let home = NSHomeDirectory()
@@ -58,6 +59,15 @@ func isFileDownloaded(filePath: String) -> Bool {
     return false
 }
 
+// Check if a directory is a package
+func isPackage(atPath path: String) -> Bool {
+    let fileURL = URL(fileURLWithPath: path)
+    if let type = try? fileURL.resourceValues(forKeys: [.contentTypeKey]).contentType {
+        return type.conforms(to: .package)
+    }
+    return false
+}
+
 // Recursively force download of directory contents
 func forceDownloadDir(cloudDir: String, header: String? = nil, includeDirs: Bool = true) {
     let fileManager = FileManager.default
@@ -68,7 +78,9 @@ func forceDownloadDir(cloudDir: String, header: String? = nil, includeDirs: Bool
             var isDir: ObjCBool = false
             fileManager.fileExists(atPath: path, isDirectory: &isDir)
             if isDir.boolValue {
-                forceDownloadDir(cloudDir: path + "/", header: header, includeDirs: includeDirs)
+                if !isPackage(atPath: path) {
+                    forceDownloadDir(cloudDir: path + "/", header: header, includeDirs: includeDirs)
+                }
             } else if !isFileDownloaded(filePath: path) {
                 if let header = header, !haveShownHeader {
                     print(header)

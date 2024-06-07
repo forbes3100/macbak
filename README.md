@@ -19,17 +19,11 @@ Tools:
 
 ## Getting Started
 
-To install, first clone the repository:
+To install, clone this repository:
 
 ```
 git clone https://github.com/forbes3100/macbak.git
 cd macbak
-```
-
-Then install dependencies:
-
-```
-pip3 install coverage pyemoji pillow_heif ui
 ```
 
 ## Usage
@@ -45,14 +39,11 @@ When run again only updated notes will be written.
 
 ### icdrivebak
 
-The following command should start the iCloud download of any files that have
-yet to be downloaded to this Mac, listing those files. The files are stored
-locally in ~/Library/Mobile Documents, allowing Time Machine, etc. to back
-them up.
+iCloud Drive backup is done whenever macbak is scheduled to run.
 
-```
-./icdrivebak.py
-```
+It will download any files on iCloud Drive that have yet to be downloaded to
+this Mac, listing those files. The files are stored locally in ~/Library/Mobile
+Documents, allowing Time Machine, etc. to back them up.
 
 
 ## Contributing
